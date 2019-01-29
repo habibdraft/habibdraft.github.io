@@ -1,14 +1,16 @@
 ---
 layout: post
-title: KDD
+title: KDD algebra 2005-2006 experimental design
 ---
 
-### Format
+The questions posed here come down to a binary classification problem. We want to be able to predict whether a student will solve an algebra problem correctly on the first try. Our ability to do this both depends on and informs our understanding of those questions.
 
-A typical algebra or geometry **problem** involves a number of predetermined steps a student will have to complete before they can arrive at a final answer. The student's completion of each **step** is recorded by the software as a transaction and appears as a single row entry in our data table.
+As a starting point, I can provide that using the current expanded dataset, an off-the-shelf random forests classifier can achieve an AUC/ROC score of about 0.6 (starting from a naïve classifier score of 0.5). I know at this point that I cannot do worse than 0.6 (however better anyone else might already have done). Should I end up building a model that does worse, I can revert to the result I started with (called a baseline).
 
-| Student   | Problem  | Step  | Incorrects   | Correct First Attempt  | KC   | Opportunity |
-| --------- |--------|-----| ------------- |-------|-----| ------------- |-------------|-----|
-| S01 | Solve for one variable | -5+9y = -6 | 2 | 0 | Remove-Constant | 1 |
-| S01 | Solve for one variable | 9y = -1 | 1 | 0 | Remove-Coefficient | 5 |
-| S01 | Solve for one variable | 4-8 = -6x+8-8 | 0 | 1 | Consolidate-Variables | 2 |
+Should I end up designing a classifier that peforms better (usually through hyperparameter tuning or feature engineering), I can make that my new baseline. I can also use other people's results as baselines, if they've worked with the same data.
+
+Because this is a human-interpretable dataset, it is meaningful to discuss what its feature variables represent. The complexity/difficulty level of an algebra problem is reflected in part in the number of knowledge components it contains, the temporal component in the opportunity count associated with each knowledge component, and the subject matter in the problem name and problem hierarchy (portion of the curriculum).
+
+Knowledge component as defined by PSLC is “a generalization of everyday terms like concept, principle, fact, or skill, and cognitive science terms like schema, production rule, misconception, or facet.” In an algebra transaction, knowledge components are packaged as character-delimited strings that correspond to a directive such as "Eliminate the parentheses in this expression by distributing x" or "Remove the coefficient from y in this expression." The author of a problem and potentially additional researchers provide the knowledge components associated with a transaction (also called a problem-step). A data sample from a geometry problem set is available here.
+
+There are many already-obvious ways to build on this baseline. The subject matter associations between knowledge components could be explored, the step feature (an additional conceptual component of the data) could be included, or the causal relationship between student performance and remedial problem assignment could be assessed.
