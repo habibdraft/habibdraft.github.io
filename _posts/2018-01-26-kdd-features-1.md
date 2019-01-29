@@ -1,5 +1,5 @@
 ---
-title: KDD Challenge Part 2 - Feature Engineering 1 
+title: KDD Challenge - Feature Engineering
 date: 2017-07-10 17:35:55
 tags:
 ---
