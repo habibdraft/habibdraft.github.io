@@ -1,5 +1,3 @@
-# Memoization
-
 In a generic sense, when we're solving a problem over time, it's helpful for us to remember how we solved a previous part of the problem before and not have to go through the process of solving it again. 
 
 ## Writing a faster Fibonacci function
