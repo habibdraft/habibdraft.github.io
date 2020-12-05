@@ -8,7 +8,9 @@ title: Career tips for data engineers
 
 2. Don't be lazy. Be kind to your future self. Don't put off difficult tasks until they're too big and unwieldy to fix. Anticipate and resolve structural issues before they become real problems, especially when you're working with data that's likely to grow prohibitively large. 
 
-3. Don't try to work alone. Data science is a team sport, and data engineering especially so. A big part of your value-add as a data engineer is doing a lot of unglamorous work to make other people's jobs easier. 
+3. Be a team player. A big part of your value-add as a data engineer is doing a lot of the unglamorous work that makes other people's jobs easier. Your work will probably have domain-specific and domain-agnostic aspects. Get used to being flexible and responsive. 
+
+4. Use a production-level IDE when you code. Even if you genuinely like coding in jupyter notebooks like I do, they're not good for production and using them will hold you back. You want to be able to collaborate with your team as seamlessly as possible. Use the IDE that the rest of your team uses or find a comparable one with the features you need to work effectively. 
 
 4. Don't get wrapped up in jargon. Very often the job is about the data itself, not just about the work it takes to make the data useful. If you're in an industry where you have subject matter expertise, focus on building that expertise and growing in your role.
 
