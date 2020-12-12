@@ -1,4 +1,7 @@
-## What data engineers actually do, part 1
+---
+layout: post
+title: What data engineers actually do, part 1
+---
 
 Beyond the well-understood problems of no data and dirty/fragmented/unusable data, companies without data engineers usually suffer from two things:
 
