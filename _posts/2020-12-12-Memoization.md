@@ -31,8 +31,12 @@ def fibonacci_memoized(n):
     if n not in fibMap.keys():
         fibMap[n] = fibonacci_memoized(n - 1) + fibonacci_memoized(n - 2)
     return fibMap[n]
-```
+``` 
 
-When I'm calculating the Fibonacci value of 36 on my machine, the slow function takes about 4 seconds and the fast function 0.00005 seconds, or about 0.001% of the time. Even for calculating relatively small Fibonacci values, the slowdown in performance of the naïve function is noticeable to the point of being prohibitive. 
+## Time and space complexity
 
-Besides being able to store static values so that we don't have to calculate them over and over, it's also helpful to be able to keep recorded estimates of a value we're predicting over time so we don't have to regenerate those estimates at every calculation cycle.
+The time complexity of the naive Fibonacci function is O(2<sup>N</sup>). Calling `fibonacci_naive(8)` triggers two calls to `fibonacci_naive(7)` and `fibonacci_naive(6)`. At the next recursive level of the stack, we make four calls to `fibonacci_naive(6)`, `fibonacci_naive(5)`, `fibonacci(5)`, and `fibonacci(4)`. The next level will have eight calls, and the level after that 16 calls. The space complexity is O(N) since we won't have more than N levels of calls on the stack. Once we get to `fibonacci_naive(1)`, we don't have to make any more recursive calls and the calls we've made already start returning. 
+
+Using the memoized function, we'll only need to calculate each individual Fibonacci value once for a total of N calculations, making the time complexity O(N). Similarly, the space complexity is O(N) since we don't have to make more than N levels of calls and each level will have only one call. 
+
+When I calculate the Fibonacci value of 36 on my machine, the slow function takes about 4 seconds and the fast function 0.00005 seconds, or about 0.001% of the time. Even for calculating relatively small Fibonacci values, the slowdown in performance of the naïve function is noticeable to the point of being prohibitive. 
