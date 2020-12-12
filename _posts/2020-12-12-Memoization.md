@@ -2,7 +2,7 @@ When we're solving a problem over time, it's helpful for us to remember how we s
 
 ## Writing a faster Fibonacci function
 
-You might think about memoization in the context of writing a function to calculate the Fibonacci value of a number. 
+Here's a naive recursive function to calculate the Fibonacci value of a number. 
 
 The Fibonacci value of a natural number n greater than 1 is:
 
